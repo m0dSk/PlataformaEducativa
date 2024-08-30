@@ -19,7 +19,7 @@ function MateriaDetalles() {
         className="mt-4 p-2 bg-blue-950 text-white rounded"
         onClick={handleBackClick}
       >
-       <i class="fi fi-rr-undo"/> Regresar
+       <i className="fi fi-rr-undo"/> Regresar
       </button>
     </div>
   );
