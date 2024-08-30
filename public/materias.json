@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "Programación logica y funcional",
+      "icon": "fi-rr-bell"
+    },
+    {
+      "id": 2,
+      "name": "Taller de investigación",
+      "icon": "fi-rr-bell"
+    },
+    {
+      "id": 3,
+      "name": "Verificación y validación",
+      "icon": "fi-rr-bell"
+    },
+    {
+      "id": 4,
+      "name": "Arquitectura de computadoras",
+      "icon": "fi-rr-bell"
+    }
+  ]
