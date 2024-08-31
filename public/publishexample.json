@@ -1,0 +1,48 @@
+[
+    {
+      "userID": 1,
+      "username": "Samuel Abera",
+      "profileimg": "https://cdn-icons-png.flaticon.com/256/8360/8360529.png",
+      "contenido": "Bringing web ideas to life! Full-stack developer with 4 years of experience.",
+      "likes": 498,
+      "comentarios": 64,
+      "titulo": "Simple Design Tips"
+    },
+    {
+      "userID": 2,
+      "username": "Jane Doe",
+      "profileimg": "https://cdn-icons-png.flaticon.com/256/4825/4825015.png",
+      "contenido": "Passionate about UI/UX design, making interfaces that users love.",
+      "likes": 356,
+      "comentarios": 45,
+      "titulo": "UI/UX Best Practices"
+    },
+    {
+      "userID": 3,
+      "username": "John Smith",
+      "profileimg": "https://cdn-icons-png.flaticon.com/256/4825/4825087.png",
+      "contenido": "Backend developer specializing in scalable systems and databases.",
+      "likes": 278,
+      "comentarios": 34,
+      "titulo": "Scaling Backend Systems"
+    },
+    {
+      "userID": 4,
+      "username": "Alice Johnson",
+      "profileimg": "https://cdn-icons-png.flaticon.com/256/8326/8326728.png",
+      "contenido": "Frontend developer with a focus on accessibility and performance.",
+      "likes": 423,
+      "comentarios": 51,
+      "titulo": "Accessible Web Development"
+    },
+    {
+      "userID": 5,
+      "username": "Bob Williams",
+      "profileimg": "https://cdn-icons-png.flaticon.com/256/4825/4825123.png",
+      "contenido": "Lorem ipsum dolor sit amet consectetur adipiscing elit, mattis penatibus quis interdum egestas augue quisque, cursus at sociosqu sodales cubilia nam. Lectus sociosqu fringilla mi nulla malesuada elementum cras varius, leo massa tellus eleifend tempor vestibulum suspendisse himenaeos, sagittis convallis pellentesque enim nullam conubia sociis. Aliquet habitasse iaculis duis semper nunc auctor curabitur, dictum est ligula netus habitant hac mi, vulputate etiam fermentum natoque nisi viverra.",
+      "likes": 389,
+      "comentarios": 47,
+      "titulo": "Reliable CI/CD Pipelines"
+    }
+  ]
+  

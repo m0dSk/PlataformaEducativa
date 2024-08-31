@@ -4,8 +4,8 @@ function Navbar() {
     return (
         <nav className="navbar flex flex-row md:flex-col fixed bottom-0 md:bottom-auto md:left-0 bg-gray-800 text-white w-full md:w-40 h-16 md:h-full overflow-x-scroll rounded-sm border border-gray-700 z-[10]">
           <Link to="/actividades" className="navbar-item flex-1 md:flex-none p-4 text-center hover:bg-gray-700 flex flex-col md:flex-row md:space-x-2 space-y-0">
-            <i className="fi-rr-backpack"></i>
-            <span className='text-sm'>Actividades</span>
+          <i className="fi-rr-bell"></i>
+            <span className='text-sm'>Actividad</span>
           </Link>
           <Link to="/chat" className="navbar-item flex-1 md:flex-none p-4 text-center hover:bg-gray-700 flex flex-col md:flex-row md:space-x-2 space-y-0">
             <i className="fi fi-rr-comment-alt"></i>

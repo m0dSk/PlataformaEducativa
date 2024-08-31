@@ -10,10 +10,10 @@ function DialerItem({item}){
         </div>
         <div className="item-icons">
             <div className="item-icon">
-                <i class="fi-rr-microphone"></i>
+                <i className="fi-rr-microphone"></i>
             </div>
             <div className="item-icon">
-                <i class="fi-rr-play-alt"></i>
+                <i className="fi-rr-play-alt"></i>
             </div>
         </div>
     </div>
