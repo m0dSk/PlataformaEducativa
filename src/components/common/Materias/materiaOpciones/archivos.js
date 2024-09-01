@@ -5,9 +5,9 @@ import BackButton from './backButton'
 function Archivos() {
   return (
     <div className='px-4'><PanelMateria/>
-    <div className='pt-12'>Archivos</div>
+    <div className='pt-12'><BackButton/></div>
     <div>
-        <BackButton/>
+        Archivos
     </div>
     </div>
   )

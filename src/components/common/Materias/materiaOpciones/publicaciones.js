@@ -3,6 +3,7 @@ import PanelMateria from '../panelMateria'
 import BackButton from './backButton'
 import PublishCard from './publishCard'
 import SkeletonLoader from './skeletons';
+import SubjectCardSkeleton from './skeletons/skeletonMaterias';
 
 function Publicaciones() {
   const [publicaciones, setPublicaciones] = useState([]);
@@ -25,6 +26,11 @@ function Publicaciones() {
   }, []);
 
   return (
+    <div className='px-4'>
+    <PanelMateria/>
+    <div className='pt-12'>
+        <BackButton/> 
+    </div>
     <div className='px-4 pb-16'>
       {loading ? (
         // Mostrar skeletons mientras se carga
@@ -49,6 +55,7 @@ function Publicaciones() {
           />
         ))
       )}
+    </div>
     </div>
   );
 }

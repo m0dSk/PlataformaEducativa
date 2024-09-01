@@ -1,57 +1,45 @@
 import React, { useState, useEffect } from 'react';
-const PublishCard = ({ profileimg, username, likes, comentarios, contenido }) => {
+
+const PublishCard = ({ userID, username, profileimg, contenido, likes, comentarios, titulo }) => {
   return (
-    <div className="max-w-7xl mx-auto bg-blue-600 shadow-lg rounded-lg mb-4">
-      <div className="px-6 py-5">
-        <div className="flex items-start">
-          {/* Imagen del usuario */}
-          <img
-            className="rounded-full flex-shrink-0 mr-5"
-            src={profileimg}
-            alt={`${username}'s profile`}
-            width="50"
-            height="50"
-          />
-          {/* Contenido de la tarjeta */}
-          <div className="flex-grow truncate">
-            {/* Encabezado de la tarjeta */}
-            <div className="w-full sm:flex justify-between items-center mb-3">
-              {/* Nombre del usuario */}
-              <h2 className="text-2xl leading-snug font-extrabold text-gray-50 truncate mb-1 sm:mb-0">
-                {username}
-              </h2>
-              {/* Botones de likes y comentarios */}
-              <div className="flex-shrink-0 flex items-center space-x-3 sm:ml-2">
-                <button className="flex items-center text-left text-sm font-medium text-indigo-100 hover:text-white group focus:outline-none focus-visible:border-b focus-visible:border-indigo-100">
-                  <svg
-                    className="w-4 h-4 flex-shrink-0 mr-2 fill-current text-gray-300 group-hover:text-gray-200"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M14.682 2.318A4.485 4.485 0 0 0 11.5 1 4.377 4.377 0 0 0 8 2.707 4.383 4.383 0 0 0 4.5 1a4.5 4.5 0 0 0-3.182 7.682L8 15l6.682-6.318a4.5 4.5 0 0 0 0-6.364Zm-1.4 4.933L8 12.247l-5.285-5A2.5 2.5 0 0 1 4.5 3c1.437 0 2.312.681 3.5 2.625C9.187 3.681 10.062 3 11.5 3a2.5 2.5 0 0 1 1.785 4.251h-.003Z" />
-                  </svg>
-                  <span>{likes} <span className="sr-only">likes</span></span>
-                </button>
-                <button className="flex items-center text-left text-sm font-medium text-indigo-100 hover:text-white group focus:outline-none focus-visible:border-b focus-visible:border-indigo-100">
-                  <svg
-                    className="w-4 h-4 flex-shrink-0 mr-2 fill-current text-gray-300 group-hover:text-gray-200"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M8 0C3.6 0 0 3.1 0 7s3.6 7 8 7h.6l5.4 2v-4.4c1.2-1.2 2-2.8 2-4.6 0-3.9-3.6-7-8-7Zm4 10.8v2.3L8.9 12H8c-3.3 0-6-2.2-6-5s2.7-5 6-5 6 2.2 6 5c0 2.2-2 3.8-2 3.8Z" />
-                  </svg>
-                  <span>{comentarios} <span className="sr-only">comments</span></span>
-                </button>
-              </div>
-            </div>
-            {/* Cuerpo de la tarjeta */}
-            <div className="flex items-end justify-between whitespace-normal">
-              {/* Contenido */}
-              <div className="max-w-md text-indigo-100">
-                <p className="mb-2">{contenido}</p>
-              </div>
-              {/* Enlace "Leer más" */}
-              
-            </div>
+    <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden m-4">
+      <div className="px-6 py-4">
+        {/* Header con información del usuario */}
+        <div className="flex items-center mb-4">
+          <img className="w-10 h-10 rounded-full mr-4" src={profileimg} alt={username} />
+          <div>
+            <h3 className="font-bold text-gray-800">{username}</h3>
+            <p className="text-sm text-gray-600">Usuario ID/rol: {userID}</p>
           </div>
+        </div>
+
+        {/* Título de la publicación */}
+        <h2 className="text-xl font-bold text-gray-800 mb-2">{titulo}</h2>
+
+        {/* Contenido de la publicación */}
+        <p className="text-gray-700 text-base mb-4">{contenido}</p>
+
+        {/* Footer con likes y comentarios */}
+        <div className="flex items-center justify-between">
+          <div className="flex space-x-4">
+            <span className="flex items-center text-gray-600">
+              <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+              </svg>
+              {likes}
+            </span>
+            <span className="flex items-center text-gray-600">
+              <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clipRule="evenodd" />
+              </svg>
+              {comentarios}
+            </span>
+          </div>
+          <button className="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 hover:bg-indigo-200 transition duration-150">
+            <svg className="w-5 h-5 text-indigo-600" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

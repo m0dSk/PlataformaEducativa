@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MateriaDetalles from './components/common/Materias/MateriaDetalles';
 import Publicaciones from './components/common/Materias/materiaOpciones/publicaciones';
 import Archivos from './components/common/Materias/materiaOpciones/archivos';
+import TareasMateriaSelect from './components/common/Materias/materiaOpciones/tareasMateria';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Navbar />
 
         {/* Contenedor para el contenido */}
-        <div className="flex-1 p-4 md:pl-40 bg-gray-100 " >
+        <div className="flex-1 p-4 md:pl-40 bg-gray-100 overflow-auto" >
           <Routes>
             <Route path="/actividades" element={<Actividades />} />
             <Route path="/chat" element={<Chat />} />
@@ -29,7 +30,7 @@ function App() {
             <Route path="/materia-detalles" element={<MateriaDetalles />} />
             <Route path="/publicaciones" element={<Publicaciones/>} />
             <Route path="/archivos" element={<Archivos />} />
-            <Route path="/tareasMateria" element={<MateriaDetalles />} />
+            <Route path="/tareasMateria" element={<TareasMateriaSelect/>} />
 
           </Routes>
         </div>
