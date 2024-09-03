@@ -9,9 +9,9 @@ import TareasCardSkeleton from '../skeletons/tareasCardSkeleton';
 function TareasMateriaSelect() {
   const [tareas, setTareas] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [expandedIndex, setExpandedIndex] = useState(null); // Nuevo estado
 
   useEffect(() => {
-    // Simular un retraso en la carga de datos
     setTimeout(() => {
       fetch('/tareasmateria.json')
         .then(response => response.json())
@@ -23,8 +23,12 @@ function TareasMateriaSelect() {
           console.error('Error al cargar las tareas:', error);
           setLoading(false);
         });
-    }, 2000); // Simular 2 segundos de retraso
+    }, 2000);
   }, []);
+
+  const toggleExpand = (index) => {
+    setExpandedIndex(index === expandedIndex ? null : index); // Expandir/Colapsar
+  };
 
   return (
     <div className='px-4'>
@@ -34,7 +38,6 @@ function TareasMateriaSelect() {
       </div>
       <div className='px-4 pb-16'>
         {loading ? (
-          // Mostrar skeletons mientras se carga
           <>
               <TareasCardSkeleton/>
               <TareasCardSkeleton/>
@@ -43,15 +46,24 @@ function TareasMateriaSelect() {
               <TareasCardSkeleton/>
           </>
         ) : (
-          // Mostrar las tareas cuando los datos se carguen
           tareas.map((tarea, index) => (
-            <TareasCard 
-              key={index}
-              title={tarea.titulo}
-              date={tarea.fecha}
-              description={tarea.descripcion}
-              status={tarea.estado}
-            />
+            <div key={index}>
+              <TareasCard 
+                title={tarea.titulo}
+                date={tarea.fecha}
+                description={tarea.descripcion}
+                status={tarea.estado}
+                isExpanded={expandedIndex === index}
+                onToggleExpand={() => toggleExpand(index)}
+              />
+              {expandedIndex === index && (
+                <div className="m-4">
+                  {/* Componente adicional que se despliega */}
+
+                  <TareasCardSkeleton></TareasCardSkeleton>
+                </div>
+              )}
+            </div>
           ))
         )}
       </div>
