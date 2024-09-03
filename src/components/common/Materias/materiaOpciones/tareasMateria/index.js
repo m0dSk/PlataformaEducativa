@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import PanelMateria from '../../panelMateria';
 import BackButton from '../backButton';
 import TareasCardSkeleton from '../skeletons/tareasCardSkeleton';
+import SubirTarea from './subirTarea';
 
 
 function TareasMateriaSelect() {
@@ -60,7 +61,7 @@ function TareasMateriaSelect() {
                 <div className="m-4">
                   {/* Componente adicional que se despliega */}
 
-                  <TareasCardSkeleton></TareasCardSkeleton>
+                  <SubirTarea/>
                 </div>
               )}
             </div>
