@@ -13,10 +13,11 @@ function TareasMateriaSelect() {
   const [expandedIndex, setExpandedIndex] = useState(null); // Nuevo estado
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch('/tareasmateria.json')
+
+      fetch('http://localhost:8000/api/tareas/')
         .then(response => response.json())
         .then(data => {
+          console.log('Datos recibidos:', data);  // Aquí se muestra el JSON en la consola
           setTareas(data);
           setLoading(false);
         })
@@ -24,7 +25,7 @@ function TareasMateriaSelect() {
           console.error('Error al cargar las tareas:', error);
           setLoading(false);
         });
-    }, 2000);
+
   }, []);
 
   const toggleExpand = (index) => {
@@ -49,11 +50,11 @@ function TareasMateriaSelect() {
         ) : (
           tareas.map((tarea, index) => (
             <div key={index}>
-              <TareasCard 
-                title={tarea.titulo}
-                date={tarea.fecha}
-                description={tarea.descripcion}
-                status={tarea.estado}
+               <TareasCard 
+                titulo={tarea.titulo}               // Ahora pasa titulo
+                fecha_publicacion={tarea.fecha_entrega}          // Cambiado a fecha_entrega
+                descripcion={tarea.descripcion}     // Pasa la descripcion
+                status={tarea.status}               // Pasa el estado correcto
                 isExpanded={expandedIndex === index}
                 onToggleExpand={() => toggleExpand(index)}
               />

@@ -10,6 +10,8 @@ import MateriaDetalles from './components/common/Materias/MateriaDetalles';
 import Publicaciones from './components/common/Materias/materiaOpciones/publicaciones';
 import Archivos from './components/common/Materias/materiaOpciones/archivos';
 import TareasMateriaSelect from './components/common/Materias/materiaOpciones/tareasMateria';
+import Register from './components/Login/Register';
+import Login from './components/Login/LogIn';
 
 
 function App() {
@@ -31,6 +33,10 @@ function App() {
             <Route path="/publicaciones" element={<Publicaciones/>} />
             <Route path="/archivos" element={<Archivos />} />
             <Route path="/tareasMateria" element={<TareasMateriaSelect/>} />
+            <Route path="/login" element={<Login></Login>} />
+            <Route path="/registrar" element={<Register></Register>} />
+
+
 
           </Routes>
         </div>
